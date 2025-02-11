@@ -12,6 +12,8 @@ class WebSocketTestCase(TestCase):
         message = {
             'message': 'User testuser created'
         }
+        print(message)
+
         await communicator.send_json_to(message)
 
         response = await communicator.receive_json_from()

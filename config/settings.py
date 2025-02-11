@@ -10,7 +10,10 @@ SECRET_KEY = 'django-insecure-sq-_u(c3c5v9k9ef_g&0jvaimv@g%+#)$!=3op&w6$rvei(j9%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+    "beamtest-production.up.railway.app",  # Домен Railway
+    "localhost",
+]
 
 # Application definition
 INSTALLED_APPS = [
@@ -112,3 +115,7 @@ CHANNEL_LAYERS = {
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://beamtest-production.up.railway.app",
+]
