@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список приложений</title>
+</head>
+<body>
+    <h1>Список объектов</h1>
+    
+    {% if user.is_authenticated %}
+        <p>Пользователь:  {{ user.username }}!</p>
+    {% endif %}
+    
+    <h2><a href="{% url 'category_list' %}">Категории</a></h2>
+    <h2><a href="{% url 'product_list' %}">Продукты</a></h2>
+    <h2><a href="{% url 'user_list' %}">Пользователи</a></h2>
+    <h2><a href="{% url 'profile_list' %}">Профили</a></h2>
+    <h2><a href="{% url 'order_list' %}">Заказы</a></h2>
+</body>
+</html>

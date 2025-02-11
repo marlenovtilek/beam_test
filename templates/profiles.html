@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список профилей</title>
+</head>
+<body>
+    <h1>Список профилей пользователей</h1>
+    <ul>
+        {% for profile in profiles %}
+            <li>{{ profile.user.username }} - {{ profile.bio }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

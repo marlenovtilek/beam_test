@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список заказов</title>
+</head>
+<body>
+    <h1>Список заказов</h1>
+    <ul>
+        {% for order in orders %}
+            <li>Заказ {{ order.id }} - Пользователь: {{ order.user.username }} - Дата создания: {{ order.created_at }}</li>
+            <ul>
+                {% for product in order.products.all %}
+                    <li>Продукт: {{ product.name }} - Цена: {{ product.price }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </ul>
+</body>
+</html>
